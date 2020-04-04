@@ -16,6 +16,20 @@ export const RenderIframe: FunctionComponent = () => {
             console.log("iframe !null", iframe)
             iframe.addEventListener("load", function () {
                 console.log("iframe Loaded");
+                if (document) {
+                    const isIFrame = (input: HTMLElement | null): input is HTMLIFrameElement =>
+                        input !== null && input.tagName === 'IFRAME';
+
+                    const frame = document.getElementById('test');
+                    console.log(frame)
+
+                    // if (isIFrame(frame) && frame.contentWindow) {
+                    //     const htmls = frame.contentWindow
+                    //     console.log(htmls)
+                    // }
+
+
+                }
             });
         }
     });
